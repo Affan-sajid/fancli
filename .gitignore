@@ -9,3 +9,6 @@ venv/
 .venv/
 *.egg
 token.json
+
+# Local notes (not for the repo)
+note_for_me.md

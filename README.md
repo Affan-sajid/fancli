@@ -1,6 +1,12 @@
 # fancli
 
+[![PyPI version](https://img.shields.io/pypi/v/fancli.svg)](https://pypi.org/project/fancli/)
+[![Python versions](https://img.shields.io/pypi/pyversions/fancli.svg)](https://pypi.org/project/fancli/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/Affan-sajid/fancli/blob/main/LICENSE)
+
 Terminal CLI for smart fans. It refreshes and caches an access token, reads device state, and sends commands (power, speed, timer, lights, and more). **Atomberg** is supported today via the [Atomberg IoT developer API](https://api.developer.atomberg-iot.com); more vendors may be added later.
+
+**Repository:** [github.com/Affan-sajid/fancli](https://github.com/Affan-sajid/fancli)
 
 ## Requirements
 
@@ -10,19 +16,17 @@ Terminal CLI for smart fans. It refreshes and caches an access token, reads devi
 
 ### From PyPI
 
-After the package is [published on PyPI](https://pypi.org/project/fancli/), install with:
-
 ```bash
 pip install fancli
 ```
 
-For an isolated CLI install (recommended if you use `pipx`):
+CLI only, isolated from your default Python environment (recommended):
 
 ```bash
 pipx install fancli
 ```
 
-That puts the `fancli` command on your `PATH` (for `pip`, use a venv or `pip install --user` and ensure your user scripts directory is on `PATH`).
+That installs the `fancli` command on your `PATH`. With plain `pip`, prefer a virtual environment or `pip install --user` and ensure your user scripts directory is on `PATH`.
 
 ### From source (development)
 
@@ -69,7 +73,9 @@ Run **`fancli`** or **`fancli help`** for the full user guide (same text as the 
 
 ## Environment
 
-Configure via a `.env` file (project directory, current working directory, or after setup `~/.config/fancli/.env`) or your shell.
+Configure via a `.env` file (project directory, current working directory, or after setup `~/.config/fancli/.env`) or your shell. **Do not commit** `.env` or paste real tokens into issues—use placeholders when asking for help.
+
+Variables are **names only** below; get real values from the vendor developer portal and `fancli setup`.
 
 | Variable | Required | Description |
 |----------|----------|-------------|
