@@ -1,0 +1,1 @@
+"""Atomberg IoT fan CLI."""

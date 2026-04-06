@@ -1,0 +1,86 @@
+Hello, and welcome to fancli
+=============================
+
+fancli — smart fan control from the terminal
+--------------------------------------------
+
+Overview
+--------
+fancli is designed for controlling your smart fan. It refreshes and caches an
+access token, reads device state, and sends commands (power, speed, timer,
+lights, and more). Current vendor support: Atomberg (via the Atomberg IoT
+developer API). More brands may be added over time.
+
+Run `fancli setup` first to pick a vendor, save your API credentials, list
+devices, and choose which device to control. After that, use `fancli status`
+and `fancli set` as usual.
+
+
+Environment
+-----------
+Set these in the environment or in a .env file next to your project directory
+or in the current working directory:
+
+  REFRESH_TOKEN   Required. OAuth refresh token from the developer portal.
+  API_KEY         Required. Your API key (x-api-key header).
+  DEVICE_ID       Required for status and set. Target device UUID.
+
+Optional:
+
+  API_URL         Base URL for the API (default: https://api.developer.atomberg-iot.com).
+  FANCLI_COMPANY  Vendor name (e.g. atomberg); set by `fancli setup`.
+  FANCLI_TOKEN_FILE   Override path for the cached access token JSON (default:
+                      ~/.config/fancli/token.json).
+
+Access tokens are cached for up to 23 hours; fancli refreshes automatically
+when the cache is stale or the API returns 401.
+
+
+Commands
+--------
+
+  fancli
+  fancli help
+      Print this guide (read from help.txt shipped with the package).
+
+  fancli setup
+      Interactive setup wizard: choose vendor (Atomberg is available; other
+      vendors are listed as coming soon with a note on how to contribute), enter
+      API key and refresh token (or leave blank to keep saved values), call
+      GET /v1/get_list_of_devices, print the JSON response, pick a device, and
+      save API_KEY, REFRESH_TOKEN, DEVICE_ID, and FANCLI_COMPANY to your .env
+      (existing .env in the project/cwd if present, otherwise ~/.config/fancli/.env).
+
+  fancli status
+      Call GET /v1/get_device_state and print device state (human-readable by
+      default; use --json for raw JSON).
+
+  fancli set <key> <value>
+      Call POST /v1/send_command with command { "<key>": <parsed value> }.
+
+      Values are parsed as JSON first (e.g. true, false, "warm", [1,2]),
+      then as int, float, or plain text.
+
+      Run `fancli set` with no arguments to print the built-in reference for
+      supported keys (power, speed, timer, led, brightness, light_mode, etc.).
+
+
+Examples
+--------
+
+  fancli setup
+  fancli status
+  fancli set power true
+  fancli set speed 3
+  fancli set timer 2
+  fancli set light_mode "warm"
+
+
+Troubleshooting
+---------------
+  • "REFRESH_TOKEN is not set" — run `fancli setup` or add credentials to .env
+    or your shell.
+  • HTTP 401 — fancli will try to refresh the token once; check refresh token
+    and API key if it keeps failing.
+  • "help file not found" — your install is missing help.txt; reinstall fancli
+    or run from a source checkout with the fancli package intact.

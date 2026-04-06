@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fancli"
+version = "0.1.0"
+description = "CLI for controlling smart fans (currently Atomberg)"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "requests>=2.28.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.scripts]
+fancli = "fancli.cli:main"
+
+[tool.setuptools]
+packages = ["fancli"]
+
+[tool.setuptools.package-data]
+fancli = ["help.txt"]
