@@ -61,8 +61,9 @@ Commands
       Values are parsed as JSON first (e.g. true, false, "warm", [1,2]),
       then as int, float, or plain text.
 
-      Run `fancli set` with no arguments to print the built-in reference for
-      supported keys (power, speed, timer, led, brightness, light_mode, etc.).
+      Primary: `fancli set --help` or `fancli set -h` for the built-in reference
+      for supported keys (power, speed, timer, led, brightness, light_mode, etc.).
+      Shortcut: `fancli set` with no arguments, or `fancli set help` (same text).
 
 
 Examples

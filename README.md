@@ -57,6 +57,14 @@ You should then have the `fancli` command on your `PATH`.
    fancli set speed 3
    ```
 
+4. Key/value reference for `set`:
+
+   ```bash
+   fancli set --help
+   ```
+
+   Or: **`fancli set -h`**
+
 Run **`fancli`** or **`fancli help`** for the full user guide (same text as the bundled `help.txt`).
 
 ## Environment
@@ -86,7 +94,7 @@ Access tokens are cached for up to 23 hours; fancli refreshes when the cache is 
 | `fancli` / `fancli help` | Full user guide |
 | `fancli setup` | Interactive wizard: vendor, credentials, list devices, save selection |
 | `fancli status` | Device state (`--json` for raw JSON) |
-| `fancli set <key> <value>` | Send a command; run `fancli set` alone for key/value reference |
+| `fancli set <key> <value>` | Send a command; **`fancli set --help`** / **`-h`** for the key/value reference (Quick start) |
 
 ## Troubleshooting
 

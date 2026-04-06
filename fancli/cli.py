@@ -402,7 +402,10 @@ def get_set_command_reference_text() -> str:
 
 
 def print_set_command_help() -> None:
-    """Full usage when `fancli set` is run without key and value."""
+    """Full reference when `fancli set --help`, `fancli set -h`, `fancli set`, or `fancli set help`."""
+    print("Primary: fancli set --help  (or fancli set -h)")
+    print("Shortcut: fancli set  with no arguments, or: fancli set help")
+    print()
     print("Usage: fancli set <key> <value>")
     print()
     print(get_set_command_reference_text())
@@ -815,6 +818,11 @@ def main() -> None:
     set_p = sub.add_parser(
         "set",
         help="Send a command with a single key/value (send_command)",
+        description=(
+            "Send POST /v1/send_command with one key/value. "
+            "The key/value reference below is the same as "
+            "`fancli set` with no arguments or `fancli set help`."
+        ),
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=get_set_command_reference_text(),
     )
@@ -841,6 +849,9 @@ def main() -> None:
         elif args.command == "status":
             run_status(cfg, cache_path, json_output=getattr(args, "status_json", False))
         elif args.command == "set":
+            if args.key == "help" and args.value is None:
+                print_set_command_help()
+                return
             if args.key is None and args.value is None:
                 print_set_command_help()
                 return
