@@ -4,6 +4,12 @@ All notable changes to **fancli** are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.1.2] — 2026-04-07
+
+### Added
+
+- Standard CLI version flag support: **`fancli -v`** / **`fancli --version`** now prints the installed package version.
+
 ## [0.1.0] — 2026-04-07
 
 ### Added
@@ -19,3 +25,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - **MIT** license; metadata and project URLs in `pyproject.toml`.
 
 [0.1.0]: https://github.com/Affan-sajid/fancli/releases/tag/v0.1.0
+[0.1.2]: https://github.com/Affan-sajid/fancli/releases/tag/v0.1.2
