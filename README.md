@@ -4,7 +4,7 @@
 [![Python versions](https://img.shields.io/pypi/pyversions/fancli.svg)](https://pypi.org/project/fancli/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/Affan-sajid/fancli/blob/main/LICENSE)
 
-Terminal CLI for smart fans. It refreshes and caches an access token, reads device state, and sends commands (power, speed, timer, lights, and more). **Atomberg** is supported today via the [Atomberg IoT developer API](https://api.developer.atomberg-iot.com); more vendors may be added later.
+Terminal CLI for smart fans. It refreshes and caches an access token, reads device state, and sends commands (power, speed, timer, lights, and more). **Atomberg** is supported today via the [Atomberg IoT developer API](https://developer.atomberg-iot.com); more vendors may be added later.
 
 **Repository:** [github.com/Affan-sajid/fancli](https://github.com/Affan-sajid/fancli)
 
