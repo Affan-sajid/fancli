@@ -103,6 +103,26 @@ Access tokens are cached for up to 23 hours; fancli refreshes when the cache is 
 | `fancli status` | Device state (`--json` for raw JSON) |
 | `fancli set <key> <value>` | Send a command; **`fancli set --help`** / **`-h`** for the key/value reference (Quick start) |
 
+## Contributing
+
+Contributions are welcome and appreciated. If you have an idea, bug report, docs improvement, or support for another fan vendor, please open an issue or submit a pull request.
+
+A quick way to contribute:
+
+1. Fork the repo and create a feature branch.
+2. Set up a local dev environment:
+
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate   # Windows: .venv\Scripts\activate
+   pip install -e .
+   ```
+
+3. Make your changes and test the relevant commands (for example: `fancli setup`, `fancli status`, `fancli set`).
+4. Open a PR with a clear description of what changed and why.
+
+Please keep secrets out of commits and screenshots (`.env`, refresh tokens, API keys). Use placeholder values in examples and issue reports.
+
 ## Troubleshooting
 
 - **`REFRESH_TOKEN is not set`** — Run `fancli setup` or set variables in `.env` or your environment.
