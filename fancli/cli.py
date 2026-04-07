@@ -24,6 +24,8 @@ from typing import Any, Optional, Tuple
 import requests
 from dotenv import load_dotenv, set_key
 
+from fancli import __version__
+
 TOKEN_MAX_AGE = timedelta(hours=23)
 DEFAULT_API_URL = "https://api.developer.atomberg-iot.com"
 
@@ -797,6 +799,13 @@ def main() -> None:
         description="Control your smart fan from the terminal (Atomberg supported today).",
         epilog="With no subcommand, prints the full user guide (same as `fancli help`).",
         formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    parser.add_argument(
+        "-v",
+        "--version",
+        action="version",
+        version=f"%(prog)s {__version__}",
+        help="Print installed fancli version and exit",
     )
     sub = parser.add_subparsers(dest="command", required=False)
 

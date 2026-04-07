@@ -98,6 +98,7 @@ Access tokens are cached for up to 23 hours; fancli refreshes when the cache is 
 | Command | Purpose |
 |---------|---------|
 | `fancli` / `fancli help` | Full user guide |
+| `fancli -v` / `fancli --version` | Print installed fancli version |
 | `fancli setup` | Interactive wizard: vendor, credentials, list devices, save selection |
 | `fancli status` | Device state (`--json` for raw JSON) |
 | `fancli set <key> <value>` | Send a command; **`fancli set --help`** / **`-h`** for the key/value reference (Quick start) |
