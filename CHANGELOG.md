@@ -4,6 +4,13 @@ All notable changes to **fancli** are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## [0.1.3] — 2026-04-07
+
+### Fixed
+
+- `fancli setup` fallback persistence/load path is now consistent: when setup writes to `~/.config/fancli/.env`, runtime config discovery now reads that file on fresh installs.
+- Interactive setup credential entry (`API_KEY`, `REFRESH_TOKEN`) is now visible while typing instead of password-masked input.
+
 ## [0.1.2] — 2026-04-07
 
 ### Added
@@ -26,3 +33,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 [0.1.0]: https://github.com/Affan-sajid/fancli/releases/tag/v0.1.0
 [0.1.2]: https://github.com/Affan-sajid/fancli/releases/tag/v0.1.2
+[0.1.3]: https://github.com/Affan-sajid/fancli/releases/tag/v0.1.3

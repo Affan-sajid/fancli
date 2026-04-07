@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 import argparse
-import getpass
 import json
 import os
 import shutil
@@ -110,6 +109,9 @@ def _find_dotenv() -> Optional[Path]:
         candidate = base / ".env"
         if candidate.is_file():
             return candidate
+    fallback = Path.home() / ".config" / "fancli" / ".env"
+    if fallback.is_file():
+        return fallback
     return None
 
 
@@ -617,7 +619,8 @@ def _prompt_secret(
     else:
         print(f"{label}: ", end="", flush=True)
     if stdin_tty:
-        line = getpass.getpass("")
+        # Keep credentials visible while typing in setup.
+        line = input("")
     else:
         line = sys.stdin.readline().rstrip("\n")
     out = line.strip()
